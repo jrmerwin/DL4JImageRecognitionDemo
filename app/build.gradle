@@ -18,7 +18,7 @@ android {
         }
         buildTypes {
             release {
-                minifyEnabled false
+                minifyEnabled true
                 proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             }
         }
@@ -55,13 +55,7 @@ android {
 
         //Image loading dependencies
         compile 'org.datavec:datavec-data-codec:0.9.1'
-
-        //handles the dex error
-        compile 'com.google.code.findbugs:annotations:3.0.1', {
-            exclude module: 'jsr305'
-            exclude module: 'jcip-annotations'
-        }
-
+  
         //This corrects for a junit version conflict.
         configurations.all {
             resolutionStrategy.force 'junit:junit:4.12'
